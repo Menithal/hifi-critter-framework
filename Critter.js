@@ -24,6 +24,7 @@ var RAYDISTANCE = 1.2;
 if (Critter === undefined) {
     var defaultRules = {
         max_distance: 20,
+        client_bound: true,
         keep_within_distance: 20,
         gravity: -9,
         max_turnrate: 5,
@@ -164,7 +165,7 @@ if (Critter === undefined) {
 
             this.newInstance(this.entityToSpawn);
 
-            this.followerID = Entities.addEntity(this.entityToSpawn);
+            this.followerID = Entities.addEntity(this.entityToSpawn, this.rules.client_bound);
 
             this.dimensions = this.entityToSpawn.dimensions;
 
